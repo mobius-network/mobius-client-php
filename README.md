@@ -48,8 +48,6 @@ define('SECRET_KEY', 'YOUR SECRET KEY GOES HERE');
 // Define JWT Secret
 define('JWT_SECRET', 'YOUR JWT SECRET GOES HERE');
 
-include '../vendor/autoload.php';
-
 $expire_in = 86400; // Session duration
 if(!isset($_GET['xdr'])){
     // Generates and returns challenge transaction XDR signed by application to user
@@ -92,8 +90,6 @@ define('SECRET_KEY', 'YOUR SECRET KEY GOES HERE');
 
 // Define JWT Secret
 define('JWT_SECRET', 'YOUR JWT SECRET GOES HERE');
-
-include '../vendor/autoload.php';
 
 $token = $_GET['token']; // Get it from $_SESSION if you have stored there.
 $jwt = new Mobius\Client\Auth\Jwt(JWT_SECRET);
