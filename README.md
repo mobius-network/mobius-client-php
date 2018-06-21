@@ -48,8 +48,9 @@ define('SECRET_KEY', 'YOUR SECRET KEY GOES HERE');
 // Define JWT Secret
 define('JWT_SECRET', 'YOUR JWT SECRET GOES HERE');
 
-$expire_in = 86400; // Session duration
 if(!isset($_GET['xdr'])){
+    $expire_in = 86400; // Session duration
+    
     // Generates and returns challenge transaction XDR signed by application to user
     $ch = Mobius\Client\Auth\Challenge::generate_challenge(SECRET_KEY, $expire_in);
     echo $ch;
