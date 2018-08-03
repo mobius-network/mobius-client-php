@@ -9,11 +9,11 @@ use \ZuluCrypto\StellarSdk\XdrModel\Operation\SetOptionsOp;
 
 class AddCosigner{
 
-    public function call($keypair, $consigner_keypair, $weight = 1){
+    public static function call($keypair, $consigner_keypair, $weight = 1){
         return AddCosigner::tx($keypair, $consigner_keypair, $weight)->submit($keypair);
     }
 
-    public function tx($keypair, $consigner_keypair, $weight){
+    public static function tx($keypair, $consigner_keypair, $weight){
         $txBuilder = Client::getServer()->buildTransaction($keypair);
         $txBuilder->setSequenceNumber((new Account($keypair))->next_sequence_value());
 
