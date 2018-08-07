@@ -1,6 +1,7 @@
 {
     "name": "mobius-network/mobius-client-php",
     "description": "Mobius DApp Store PHP SDK",
+    "license": "MIT",
     "require": {
         "zulucrypto/stellar-api": "^0.6.3",
         "christian-riesen/base32": "^1.3",
