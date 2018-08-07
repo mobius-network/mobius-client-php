@@ -12,6 +12,20 @@
     "autoload": {
       "psr-4": {
           "Mobius\\": "src/"
-      }
+      },
+        "files": {
+            "src/client.php",
+            "src/stellar/account.php",
+            "src/client/app.php",
+            "src/client/auth/challenge.php",
+            "src/client/auth/jwt.php",
+            "src/client/auth/sign.php",
+            "src/client/auth/token.php",
+            "src/blockchain/account.php",
+            "src/blockchain/add_cosigner.php",
+            "src/blockchain/create_trustline.php",
+            "src/blockchain/friend_bot.php",
+            "src/blockchain/key_pair_factory.php",
+        }
     }
 }
