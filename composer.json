@@ -10,5 +10,5 @@
     "autoload": {
       "psr-4": {"Mobius\\": "src/"}
     },
-    "license": "MIT",
+    "license": "MIT"
 }
