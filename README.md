@@ -17,6 +17,12 @@ An overview of the DApp Store architecture is:
 - When a user opens an app through the DApp Store:
   1) Adds the application's public key as a signer so the application can access the MOBI and
   2) Signs a challenge transaction from the app with its secret key to authenticate that this user owns the account. This prevents a different person from pretending they own the account and spending the MOBI (more below under Authentication).
+  
+## Installation
+
+Run this composer command
+
+`composer require mobius-network/mobius-client-php`
 
 ## Authentication
 
