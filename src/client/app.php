@@ -104,7 +104,7 @@ class App{
         }
         $txBuilder = $this->payout_tx($amount, $target_address);
 
-        $response = $txBuilder->submit($this->user_keypair());
+        $response = $txBuilder->submit($this->app_keypair());
         $this->reload_user_account();
         $this->reload_app_account();
         return $response;
