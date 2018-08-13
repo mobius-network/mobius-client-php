@@ -102,7 +102,7 @@ class App{
         if($current_balance < $amount){
             throw new \Exception("Insufficient Funds");
         }
-        $txBuilder = $this->payment_tx($amount, $target_address);
+        $txBuilder = $this->payout_tx($amount, $target_address);
 
         $response = $txBuilder->submit($this->user_keypair());
         $this->reload_user_account();
