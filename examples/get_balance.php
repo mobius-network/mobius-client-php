@@ -15,5 +15,5 @@ $jwt = new Mobius\Client\Auth\Jwt(JWT_SECRET);
 $token = $jwt->decode($token);  
 
 $app = new Mobius\Client\App(SECRET_KEY, $token->public_key);
-echo $app->balance();
+echo $app->user_balance();
 die;

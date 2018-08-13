@@ -15,5 +15,5 @@ $token = $jwt->decode($token);
 $price = 5;
 $app = new Mobius\Client\App(SECRET_KEY, $token->public_key);
 $app->charge($price);
-echo $app->balance();
+echo $app->user_balance();
 die;
