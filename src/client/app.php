@@ -75,7 +75,7 @@ class App{
      * @throws \Exception If Current Balance is insufficient
      */
     public function charge($amount, $target_address = null){
-        $current_balance = $this->balance();
+        $current_balance = $this->user_balance();
         if($current_balance < $amount){
             throw new \Exception("Insufficient Funds");
         }
@@ -98,7 +98,7 @@ class App{
      * @throws \Exception If Current Balance is insufficient
      */
     public function transfer($amount, $target_address){
-        $current_balance = $this->balance();
+        $current_balance = $this->user_balance();
         if($current_balance < $amount){
             throw new \Exception("Insufficient Funds");
         }
