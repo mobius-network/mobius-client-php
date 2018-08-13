@@ -50,7 +50,7 @@ class App{
      * 
      * @return float User balance
      */
-    public function balance(){
+    public function user_balance(){
         $this->validate();
         return $this->balance_object()->getBalance();
     }
