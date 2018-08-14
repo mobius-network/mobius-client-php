@@ -102,7 +102,7 @@ class App{
         if($current_balance < $amount){
             throw new \Exception("Insufficient Funds");
         }
-        $txBuilder = $this->payout_tx($amount, $target_address);
+        $txBuilder = $this->payout_tx($amount, $target_address, false);
 
         $response = $txBuilder->submit($this->app_keypair());
         $this->reload_user_account();
@@ -133,17 +133,21 @@ class App{
         return $response;
     }
 
-    public function payout_tx($amount, $address){
+    public function payout_tx($amount, $address, $from_app = true){
         $server = Client::getServer();
-
-        $sequence = $this->user_account()->next_sequence_value();
 
         $asset = new Asset(Asset::TYPE_ALPHANUM_4);
         $asset->setAssetCode($this->getClient()->get_asset_code());
         $account_id = new AccountId($this->getClient()->get_asset_issuer());
         $asset->setIssuer($account_id);
 
-        $txBuilder = $server->buildTransaction($this->user_keypair())
+        if($from_app){
+            $source_keypair = $this->app_keypair();
+        }
+        else{
+            $source_keypair = $this->user_keypair();
+        }
+        $txBuilder = $server->buildTransaction($source_keypair)
                             ->addCustomAssetPaymentOp($asset, $amount, Client::to_keypair($address));
         return $txBuilder;
     }
