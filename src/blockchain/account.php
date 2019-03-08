@@ -110,7 +110,7 @@ class Account{
         $signers = $this->info()->getSigners();
         if($signers){
             foreach($signers as $signer){
-                if($signer['public_key'] == $address){
+                if($signer['key'] == $address){
                     return $signer;
                 }
             }
